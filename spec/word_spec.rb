@@ -65,27 +65,25 @@ describe("Word") do
     end
   end
 
+  describe("#sort") do
+    it("sorts the words by their input_word variable") do
+      word1 = Word.new("BWord1", "Definition1")
+      word1.save()
+      word2 = Word.new("AWord2", "Definition2")
+      word2.save()
+      Word.sort()
+      expect(Word.all()).to(eq([word2, word1]))
+    end
+  end
 
-#   describe("#sort") do
-#   it("sorting the contact objects by their last_name variables") do
-#     contact1 = Contact.new("Keegan", "Ruebling", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
-#     contact1.save()
-#     contact2 = Contact.new("Michael", "Brooks", "job_title", "company", "type", "phone_number", "street_address", "city", "state", "zip")
-#     contact2.save()
-#     Contact.sort()
-#     expect(Contact.all()).to(eq([contact2, contact1]))
-#   end
-# end
-#
-
-  # describe(".find") do
-  #   it("finds an word based on its id") do
-  #     word = Word.new("Word1", "Definition1")
-  #     word.save()
-  #     word2 = Word.new("Word2", "Definition2")
-  #     word2.save()
-  #     expect(Word.find(1)).to(eq(word))
-  #     expect(Word.find(2)).to(eq(word2))
-  #   end
-  # end
+  describe(".find") do
+    it("finds an word based on its id") do
+      word = Word.new("Word1", "Definition1")
+      word.save()
+      word2 = Word.new("Word2", "Definition2")
+      word2.save()
+      expect(Word.find(1)).to(eq(word))
+      expect(Word.find(2)).to(eq(word2))
+    end
+  end
 end
