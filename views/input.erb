@@ -1,5 +1,7 @@
 <h2>List of Words</h2>
-
+  <h4>big</h4>
+  <h4>little</h4>
+  <br>
 <% @list.each do |word| %>
   <h4><a href="/words/<%= word.id %>"><%= word.input_word %></a></h4>
 <% end %>
