@@ -1,5 +1,5 @@
-<h1>Word: <%= @word.word %></h1>
-<h1>Definition: <%= @word.definition %></h1>
+<h1>Word: <%= @word.input_word %></h1>
+<h1>Definition: <%= @word.input_definition %></h1>
 
 <form action="/words/<%= @word.id %>" method="post">
 <button type="submit" class="btn btn-warning">Delete Word</button>

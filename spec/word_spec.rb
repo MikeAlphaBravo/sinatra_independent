@@ -13,14 +13,14 @@ describe("Word") do
     end
   end
 
-  # describe("#save") do
-  #   it("saves an word to the list of items") do
-  #     word = Word.new("Word1", "Definition1")
-  #     word.save()
-  #     expect(Word.all()).to(eq([word]))
-  #   end
-  # end
-  #
+  describe("#save") do
+    it("saves a word to the list of items") do
+      word = Word.new("Word1", "Definition1")
+      word.save()
+      expect(Word.all()).to(eq([word]))
+    end
+  end
+
   # describe(".clear") do
   #   it("clears all items from the list") do
   #     word = Word.new("Word1", "Definition1")

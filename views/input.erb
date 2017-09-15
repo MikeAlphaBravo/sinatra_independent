@@ -1,7 +1,7 @@
 <h2>List of Words</h2>
 
 <% @list.each do |word| %>
-  <h4><a href="/words/<%= word.id %>"><%= word.definition %> <%= word.word %></a></h4>
+  <h4><a href="/words/<%= word.id %>"><%= word.input_definition %> <%= word.input_word %></a></h4>
 <% end %>
 
 <h4>Add a new word</h4><br>

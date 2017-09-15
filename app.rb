@@ -5,16 +5,16 @@ require('./lib/word')
 require('pry')
 
 get('/') do
-  @base_list = Word.all()
-  @word_add_list = Word.all()
+  @list = Word.all()
   erb(:input)
 end
 
 post('/') do
-  word = params["word"]
-  definition = params["definition"]
+  input_word = params["word"]
+  input_definition = params["definition"]
 
-  word = Word.new(word, definition)
+  word = Word.new(input_word, input_definition)
+end
 
 get('/words/:id') do
   @word = Word.find(params[:id])
