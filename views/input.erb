@@ -3,7 +3,7 @@
   <h4>placeholder word 2</h4>
   <h4>placeholder word 2</h4>
 <% @list.each do |word| %>
-  <h4><a href="/words/<%= word.id %>"><%= word.input_word %><%= word.additional_definition %></a></h4>
+  <h4><a href="/words/<%= word.id %>"><%= word.input_word %><%= word.input_definition %></a></h4>
 <% end %>
 
 <h4>Add a new word</h4><br>

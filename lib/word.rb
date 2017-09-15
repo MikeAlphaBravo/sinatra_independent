@@ -2,9 +2,9 @@ class Word
   @@list = []
   attr_accessor :input_word, :input_definition, :id
 
-  def initialize(example)
+  def initialize(input_word)
     # @input_word = input_word
-    @input_word = example.fetch(:input_word)
+    @input_word = input_word
     # @input_definition = input_definition
     # @additional_definition = additional_definition
     @id = @@list.length + 1
@@ -45,10 +45,8 @@ class Word
     end
   end
 
-  # def self.sort()
-  #   @@list.sort_by! {|x| x.input_word}
-  # end
+  def self.sort()
+    @@list.sort_by! {|x| x.input_word}
+  end
 
 end
-
-# "word1" => "definition1", "word2" => "definition2"

@@ -20,11 +20,11 @@ _Create a children friendly website of word inputs and definition outputs with f
 ## Setup/Installation Requirements
 
 1. _Navigate to my repository at https://github.com/MikeAlphaBravo/sinatra_independent.git
-or to the Heroku app verion at (                                        )_
+or to the Heroku app verion at https://tranquil-fjord-13808.herokuapp.com/_
 
 ## Known Bugs
 
-_..._
+_In refactoring and trying to populate a redifinable variable and a pre populated list the general functionality was all compromised.  Will keep working on this to make a working and spec test worthy program again._
 
 ## Support and contact details
 
