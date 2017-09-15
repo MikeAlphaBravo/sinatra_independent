@@ -1,5 +1,5 @@
 class Word
-  @@list = ["word1" => "definition1", "word2" => "definition2"]
+  @@list = []
   attr_reader :word, :definition, :id
   attr_accessor :input_word, :input_definition
 
@@ -35,3 +35,5 @@ class Word
   end
 
 end
+
+# "word1" => "definition1", "word2" => "definition2"

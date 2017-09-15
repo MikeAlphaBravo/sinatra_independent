@@ -21,15 +21,15 @@ describe("Word") do
     end
   end
 
-  # describe(".clear") do
-  #   it("clears all items from the list") do
-  #     word = Word.new("Word1", "Definition1")
-  #     word.save()
-  #     Word.clear()
-  #     expect(Word.all()).to(eq([]))
-  #   end
-  # end
-  #
+  describe(".clear") do
+    it("clears all items from the list") do
+      word = Word.new("Word1", "Definition1")
+      word.save()
+      Word.clear()
+      expect(Word.all()).to(eq([]))
+    end
+  end
+
   # describe(".delete") do
   #   it("locates the word by its id index and sets the first and last name variables equal to empty strings") do
   #     word = Word.new("Word1", "Definition1")

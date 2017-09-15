@@ -14,6 +14,10 @@ post('/') do
   input_definition = params["definition"]
 
   word = Word.new(input_word, input_definition)
+
+  word.save()
+  @list = Word.sort
+  erb(:input)
 end
 
 get('/words/:id') do
