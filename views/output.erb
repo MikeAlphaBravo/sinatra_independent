@@ -1,7 +1,17 @@
 <h1>Word: <%= @word.input_word %></h1>
 <h1>Definition: <%= @word.input_definition %></h1>
 
+
 <form action="/words/<%= @word.id %>" method="post">
+  <div class="form-group"><br>
+
+    <label for="input_definition">Enter another definition of the word!</label>
+    <input id="input_definition" name="input_definition" class="form-control" type="text"><br>
+
+  </div>
+
+  <button type="submit" class="btn btn-info">Submit!</button><br><br>
+
 <button type="submit" class="btn btn-warning">Delete Word</button>
 </form><br>
 <button><a href='/'>Back to Word List</a></button>

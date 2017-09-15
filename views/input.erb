@@ -1,7 +1,7 @@
 <h2>List of Words</h2>
 
 <% @list.each do |word| %>
-  <h4><a href="/words/<%= word.id %>"><%= word.input_definition %> <%= word.input_word %></a></h4>
+  <h4><a href="/words/<%= word.id %>"><%= word.input_word %></a></h4>
 <% end %>
 
 <h4>Add a new word</h4><br>
@@ -13,9 +13,9 @@
     <input id="input_word" name="input_word" class="form-control" type="text"><br>
 
     <label for="input_definition">Enter your definition of the word!</label>
-    <input id="input_definition" name="input_definition" class="form-control" type="text"><br>
+    <input id="input_definition" name="input_definition" class="form-control" type="text">
 
   </div>
 
   <button type="submit" class="btn btn-info">Submit!</button>
-</form><br><br>
+</form>
