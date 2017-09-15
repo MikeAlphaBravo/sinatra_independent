@@ -3,9 +3,7 @@ class Word
   attr_reader :word, :definition, :id
   attr_accessor :input_word, :input_definition
 
-  def initialize(word, definition, input_word, input_definition)
-    @word = word
-    @definition = definition
+  def initialize(input_word, input_definition)
     @input_word = input_word
     @input_definition = input_definition
     @id = @@list.length + 1
@@ -20,17 +18,17 @@ class Word
   end
 
   def self.find(id)
-    contact_id = id.to_i()
+    word_id = id.to_i()
     @@list.each do |contact|
-      if contact.id == contact_id
-        return contact
+      if word.id == word_id
+        return word
       end
     end
   end
 
   def save()
-    if @@list.all? do |contact|
-      self.first_name != "" and self.last_name != ""
+    if @@list.all? do |word|
+      self.input_word != "" and self.input_definition != ""
       end
       @@list.push(self)
     end
