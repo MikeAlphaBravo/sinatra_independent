@@ -1,0 +1,15 @@
+<h1>First Name: <%= @contact.first_name %></h1>
+<h1>Last Name: <%= @contact.last_name %></h1>
+<h1>Job Title: <%= @contact.job_title %></h1>
+<h1>Company: <%= @contact.company %></h1>
+<h1>Contact Type: <%= @contact.type %></h1>
+<h1>Phone Number: <%= @contact.phone_number %></h1>
+<h1>Street Address: <%= @contact.street_address %></h1>
+<h1>City: <%= @contact.city %></h1>
+<h1>State: <%= @contact.state %></h1>
+<h1>Zip Code: <%= @contact.zip %></h1><br>
+
+<form action="/contacts/<%= @contact.id %>" method="post">
+<button type="submit" class="btn btn-warning">Delete Contact</button>
+</form><br>
+<button><a href='/'>Back to Address Book</a></button>

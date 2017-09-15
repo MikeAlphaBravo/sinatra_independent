@@ -1,0 +1,49 @@
+<h2>List of favorite things</h2>
+
+<% @list.each do |contact| %>
+  <h4><a href="/contacts/<%= contact.id %>"><%= contact.last_name %> <%= contact.first_name %></a></h4>
+<% end %>
+
+<h4>Add a new Contact</h4><br>
+
+<form action="/" method="post">
+  <div class="form-group">
+
+    <label class="type" for="inlineFormCustomSelect">Contact Type</label>
+    <select class="custom-select mb-2 mr-sm-2 mb-sm-0" id="inlineFormCustomSelect" name="type">
+      <option value="Personal">Personal</option>
+      <option value="Business">Business</option>
+    </select><br>
+    <br>
+
+    <label for="first_name">First Name</label>
+    <input id="first_name" name="first_name" class="form-control" type="text"><br>
+
+    <label for="last_name">Last Name</label>
+    <input id="last_name" name="last_name" class="form-control" type="text"><br>
+
+    <label for="job_title">Job Title</label>
+    <input id="job_title" name="job_title" class="form-control" type="text"><br>
+
+    <label for="company">Company</label>
+    <input id="company" name="company" class="form-control" type="text"><br>
+
+    <label for="phone_number">Phone Number</label>
+    <input id="phone_number" name="phone_number" class="form-control" type="number"><br>
+
+    <label for="street_address">Street Address</label>
+    <input id="street_address" name="street_address" class="form-control" type="text"><br>
+
+    <label for="city">City</label>
+    <input id="city" name="city" class="form-control" type="text"><br>
+
+    <label for="state">State</label>
+    <input id="state" name="state" class="form-control" type="text"><br>
+
+    <label for="zip">Zip Code</label>
+    <input id="zip" name="zip" class="form-control" type="number"><br>
+
+  </div>
+
+  <button type="submit" class="btn btn-info">Submit!</button>
+</form><br><br>
