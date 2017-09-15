@@ -1,16 +1,20 @@
 <h1>Word: <%= @word.input_word %></h1>
-<h1>Definition: <%= @word.input_definition %></h1>
-<h3>YOUR Definition: <%= @word.additional_definition %></h3>
+
+<% @list.define.each do |define| %>
+  <h2>Definition: <%= define[:define] %></h2>
+<% end %>
+
+<h3>YOUR Definition: <%= @word.define %></h3>
 
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group"><br>
 
-    <label for="additional_definition">Enter another definition of the word!</label>
-    <input id="additional_definition" name="additional_definition" class="form-control" type="text"><br>
+    <label for="define">Enter another definition of the word!</label>
+    <input id="define" name="define" class="form-control" type="text"><br>
 
   </div>
 
-  <button type="reset" class="btn btn-secondary">Submit!</button><br><br>
+  <!-- <button type="reset" class="btn btn-secondary">Submit!</button><br><br> -->
 
 <button type="submit" class="btn btn-warning">Delete Word</button>
 </form><br>

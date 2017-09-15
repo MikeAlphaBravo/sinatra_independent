@@ -2,6 +2,7 @@ require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
 require('./lib/word')
+require('./lib/define')
 require('pry')
 
 get('/') do
@@ -10,13 +11,9 @@ get('/') do
 end
 
 post('/') do
-  input_word = params["input_word"]
-  input_definition = params["input_definition"]
-
-  word = Word.new(input_word, input_definition)
-
-  word.save()
-  @list = Word.sort
+  extra = Word.new({:word=>params["word"]})
+  extra.save()
+  @word = Word.all()
   erb(:input)
 end
 
@@ -26,13 +23,8 @@ get('/words/:id') do
 end
 
 post('/words/:id') do
-  additional_definition = params["additional_definition"]
-
-  word = Word.new(additional_definition)
-
-  @word = Word.find(params[:id])
-  Word.save_additional(@word.id)
-  @list = Word.sort
+  @word = Word.find(params[:word])
+  @word.additional_definitionextra({:define=>params["define"]})
   erb(:output)
 end
 

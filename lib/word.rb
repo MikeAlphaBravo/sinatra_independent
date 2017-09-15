@@ -1,10 +1,10 @@
 class Word
   @@list = []
-  attr_reader :id
-  attr_accessor :input_word, :input_definition
+  attr_accessor :input_word, :input_definition, :id
 
-  def initialize(input)
-    @input_word = input.fetch(:input_word)
+  def initialize(example)
+    # @input_word = input_word
+    @input_word = example.fetch(:input_word)
     # @input_definition = input_definition
     # @additional_definition = additional_definition
     @id = @@list.length + 1
