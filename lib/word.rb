@@ -1,6 +1,6 @@
 class Word
   @@list = []
-  attr_reader :word, :definition, :id
+  attr_reader :id
   attr_accessor :input_word, :input_definition
 
   def initialize(input_word, input_definition)

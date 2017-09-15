@@ -10,8 +10,8 @@ get('/') do
 end
 
 post('/') do
-  input_word = params["word"]
-  input_definition = params["definition"]
+  input_word = params["input_word"]
+  input_definition = params["input_definition"]
 
   word = Word.new(input_word, input_definition)
 
