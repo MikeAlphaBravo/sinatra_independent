@@ -43,7 +43,11 @@ class Word
       end
     end
   end
-  
+
+  def self.sort()
+    @@list.sort_by! {|x| x.input_word}
+  end
+
 end
 
 # "word1" => "definition1", "word2" => "definition2"
