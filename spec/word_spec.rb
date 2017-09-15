@@ -38,22 +38,22 @@ describe("Word") do
   #     expect(Word.all[0].input_word()).to(eq(""))
   #   end
   # end
-  #
-  # describe("#attr_accessor") do
-  #     it("reads the instance variable") do
-  #       word = Word.new("Word3", "Definition3")
-  #       expect(word.input_word()).to(eq("Word3"))
-  #     end
-  #   end
-  #
-  # describe("#attr_accessor") do
-  #   it("writes the instance variable") do
-  #     word = Word.new("Word3", "Definition3")
-  #     word.word = "Word4"
-  #     expect(word.input_word).to(eq("Word4"))
-  #   end
-  # end
-  #
+
+  describe("#attr_accessor") do
+      it("reads the instance variable") do
+        word = Word.new("Word3", "Definition3")
+        expect(word.input_word()).to(eq("Word3"))
+      end
+    end
+
+  describe("#attr_accessor") do
+    it("writes the instance variable") do
+      word = Word.new("Word3", "Definition3")
+      word.input_word = "Word4"
+      expect(word.input_word).to(eq("Word4"))
+    end
+  end
+
   # describe("#id") do
   #   it("increments an id by 1 each time a new word is added") do
   #     word = Word.new("Word1", "Definition1")
