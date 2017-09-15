@@ -31,7 +31,7 @@ describe("Word") do
   end
 
   # describe(".delete") do
-  #   it("locates the word by its id index and sets the first and last name variables equal to empty strings") do
+  #   it("locates the word by its id index and sets the input_word and input_definition variables equal to empty strings") do
   #     word = Word.new("Word1", "Definition1")
   #     word.save()
   #     Word.delete(word.id)
@@ -40,11 +40,11 @@ describe("Word") do
   # end
 
   describe("#attr_accessor") do
-      it("reads the instance variable") do
-        word = Word.new("Word3", "Definition3")
-        expect(word.input_word()).to(eq("Word3"))
-      end
+    it("reads the instance variable") do
+      word = Word.new("Word3", "Definition3")
+      expect(word.input_word()).to(eq("Word3"))
     end
+  end
 
   describe("#attr_accessor") do
     it("writes the instance variable") do
@@ -54,6 +54,7 @@ describe("Word") do
     end
   end
 
+end
   # describe("#id") do
   #   it("increments an id by 1 each time a new word is added") do
   #     word = Word.new("Word1", "Definition1")
@@ -75,4 +76,3 @@ describe("Word") do
   #     expect(Word.find(2)).to(eq(word2))
   #   end
   # end
-end

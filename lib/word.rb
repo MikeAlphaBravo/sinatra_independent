@@ -34,6 +34,16 @@ class Word
     end
   end
 
+  def self.delete(id)
+    word_id = id.to_i()
+    @@list.map do |word|
+      if word.id == word_id
+        word.input_word = ""
+        word.input_definition = ""
+      end
+    end
+  end
+  
 end
 
 # "word1" => "definition1", "word2" => "definition2"
