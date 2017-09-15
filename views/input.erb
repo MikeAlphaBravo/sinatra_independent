@@ -1,9 +1,9 @@
 <h2>List of Words</h2>
-  <h4>big</h4>
-  <h4>little</h4>
-  <br>
+  <h5>Click on any word to see or add a definition.</h5>
+  <h4>placeholder word 2</h4>
+  <h4>placeholder word 2</h4>
 <% @list.each do |word| %>
-  <h4><a href="/words/<%= word.id %>"><%= word.input_word %></a></h4>
+  <h4><a href="/words/<%= word.id %>"><%= word.input_word %><%= word.additional_definition %></a></h4>
 <% end %>
 
 <h4>Add a new word</h4><br>

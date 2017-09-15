@@ -1,11 +1,12 @@
 class Word
   @@list = []
   attr_reader :id
-  attr_accessor :input_word, :input_definition
+  attr_accessor :input_word, :input_definition, :additional_definition
 
   def initialize(input_word, input_definition)
     @input_word = input_word
     @input_definition = input_definition
+    @additional_definition = additional_definition
     @id = @@list.length + 1
   end
 
@@ -29,6 +30,14 @@ class Word
   def save()
     if @@list.all? do |word|
       self.input_word != "" and self.input_definition != ""
+      end
+      @@list.push(self)
+    end
+  end
+
+  def save_additional()
+    if @@list.all? do |word|
+      self.additional_definition != ""
       end
       @@list.push(self)
     end

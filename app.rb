@@ -26,6 +26,17 @@ get('/words/:id') do
 end
 
 post('/words/:id') do
+  additional_definition = params["additional_definition"]
+
+  word = Word.new(additional_definition)
+
+  @word = Word.find(params[:id])
+  Word.save_additional(@word.id)
+  @list = Word.sort
+  erb(:output)
+end
+
+post('/words/:id') do
   @word = Word.find(params[:id])
   Word.delete(@word.id)
   @list = Word.sort
