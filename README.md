@@ -6,15 +6,21 @@
 
 ## Description
 
-_Create..._
+_Create a children friendly website of word inputs and definition outputs with functionality for kids to input their own words AND definitions._
 
 ## Specs
 
-
+| populate a page with clickable words                       | no initial input     | show words                                              |
+|------------------------------------------------------------|----------------------|---------------------------------------------------------|
+| click on any word                                          | on click             | take you to a page with the word and its definition(s)  |
+| OR click on an input box to add a word                     | input new word       | take you to definition page of word to add a definition |
+| in word definition viewer have spaces to add definitions   | input new definition | on click submit show word and definition                |
+| in word viewer have a "return to word list" clickable link | on click             | take you back to word list                              |
 
 ## Setup/Installation Requirements
 
-1. _..._
+1. _Navigate to my repository at https://github.com/MikeAlphaBravo/sinatra_independent.git
+or to the Heroku app verion at (                                        )_
 
 ## Known Bugs
 
@@ -22,7 +28,7 @@ _..._
 
 ## Support and contact details
 
-_If you have any updates or suggestions please contact [Name] & [Name] or make a contribution yourself._
+_If you have any updates or suggestions please contact [Michael Allen Brooks] or make a contribution yourself._
 
 [Michael Allen Brooks]: mailto:mikealphabravo1982@gmail.com
 

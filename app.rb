@@ -1,42 +1,30 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/contact')
+require('./lib/word')
 require('pry')
 
 get('/') do
-  @list = Contact.all()
+  @base_list = Word.all()
+  @word_add_list = Word.all()
   erb(:input)
 end
 
 post('/') do
-  first_name = params["first_name"]
-  last_name = params["last_name"]
-  job_title = params["job_title"]
-  company = params["company"]
-  type = params["type"]
-  phone_number = params["phone_number"]
-  street_address = params["street_address"]
-  city = params["city"]
-  state = params["state"]
-  zip = params["zip"]
+  word = params["word"]
+  definition = params["definition"]
 
-  contact = Contact.new(first_name, last_name, job_title, company, type, phone_number, street_address, city, state, zip)
+  word = Word.new(word, definition)
 
-  contact.save()
-  @list = Contact.sort
-  erb(:input)
-end
-
-get('/contacts/:id') do
-  @contact = Contact.find(params[:id])
+get('/words/:id') do
+  @word = Word.find(params[:id])
   erb(:output)
 end
 
-post('/contacts/:id') do
-  @contact = Contact.find(params[:id])
-  Contact.delete(@contact.id)
-  @list = Contact.sort
+post('/words/:id') do
+  @word = Word.find(params[:id])
+  Word.delete(@word.id)
+  @list = Word.sort
   redirect '/'
   erb(:output)
 end
