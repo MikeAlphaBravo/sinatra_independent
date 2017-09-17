@@ -6,32 +6,39 @@ require('./lib/define')
 require('pry')
 
 get('/') do
-  @list = Word.all()
+  if Dictionary.all.empty?
+    Dictionary.add_or_update("word1","definition1")
+    Dictionary.add_or_update("word2","definition2")
+    Dictionary.add_or_update("word3","definition3")
+  end
+
+  @list = Dictionary.all()
+  binding.pry
+  
   erb(:input)
 end
 
 post('/') do
-  extra = Word.new({:word=>params["word"]})
-  extra.save()
-  @word = Word.all()
+  Dictionary.add_or_update(params["word"], params["definition"])
+  @word = Dictionary.all
   erb(:input)
 end
 
-get('/words/:id') do
-  @word = Word.find(params[:id])
+get('/words/:word') do
+  @word = Dictionary.find(params[:word])
   erb(:output)
 end
 
-post('/words/:id') do
-  @word = Word.find(params[:word])
+post('/words/:word') do
+  @word = Dictionary.find(params[:word])
   @word.additional_definitionextra({:define=>params["define"]})
   erb(:output)
 end
 
-post('/words/:id') do
-  @word = Word.find(params[:id])
-  Word.delete(@word.id)
-  @list = Word.sort
+post('/words/:word') do
+  @word = Dictionary.find(params[:word])
+  Dictionary.delete(@word.word)
+  @list = Dictionary.sort
   redirect '/'
   erb(:output)
 end

@@ -1,52 +1,38 @@
-class Word
-  @@list = []
-  attr_accessor :input_word, :input_definition, :id
+class Dictionary
+  @@list = Hash.new
+  attr_accessor :word, :definition
 
-  def initialize(input_word)
-    # @input_word = input_word
-    @input_word = input_word
-    # @input_definition = input_definition
-    # @additional_definition = additional_definition
-    @id = @@list.length + 1
+  def initialize(word, definition)
+    @word = word
+    @definition = definition
   end
+
+# in find and save
+# a method
+
+  def self.add_or_update(word, definition)
+    if @@list.key?(word)
+      @@list[word].push(definition)
+    else
+      @@list[word] = [definition]
+    end
+  end
+
 
   def self.all()
     @@list
   end
 
-  def self.clear()
-    @@list = []
+  def self.find(word)
+    @@list[word]
   end
 
-  def self.find(id)
-    word_id = id.to_i()
-    @@list.each do |word|
-      if word.id == word_id
-        return word
-      end
-    end
+  def self.delete(word)
+    @@list.delete(word)
   end
 
-  def save()
-    @@list.push(self)
-  end
-
-  def save_additional(input_definition)
-    @input_definition.push(input_definition)
-  end
-
-  def self.delete(id)
-    word_id = id.to_i()
-    @@list.map do |word|
-      if word.id == word_id
-        word.input_word = ""
-        word.input_definition = ""
-      end
-    end
-  end
-
-  def self.sort()
-    @@list.sort_by! {|x| x.input_word}
-  end
+  # def self.sort()
+  #   @@list.sort_by! {|x| x.input_word}
+  # end
 
 end
