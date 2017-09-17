@@ -1,15 +1,9 @@
 <h2>List of Words</h2>
   <h5>Click on any word to see or add a definition.</h5>
-  <h4>placeholder word 2</h4>
-  <h4>placeholder word 2</h4>
 
 <% if @list.any? %>
   <% @list.each do |word| %>
-  # aiming to call the @list.each returns the three in arrays which is a
-  # word.first.first to get word [word[definition]]
-  # word.last is the array the array of def.
-  # word.last.each do |definition|
-    <h4><a href="/words/<%= word.id %>"><%= word.word %><%= word.definition %></a></h4>
+    <h4><a href="/words/<%= word.first %>"><%= word.first %></a></h4>
   <% end %>
 <% end  %>
 

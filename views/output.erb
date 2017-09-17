@@ -1,16 +1,15 @@
-<h1>Word: <%= @word.input_word %></h1>
+<h1>Word: <%= params[:word] %></h1>
+<h1>Word: <%= params[:other] %></h1>
 
-<% @list.define.each do |define| %>
-  <h2>Definition: <%= define[:define] %></h2>
+<% @word.each do |definition| %>
+  <h2>Definition: <%= definition %></h2>
 <% end %>
 
-<h3>YOUR Definition: <%= @word.define %></h3>
-
-<form action="/words/<%= @word.id %>" method="post">
+<form action="/words/" method="post">
   <div class="form-group"><br>
 
-    <label for="define">Enter another definition of the word!</label>
-    <input id="define" name="define" class="form-control" type="text"><br>
+    <label for="definition">Enter another definition of the word!</label>
+    <input id="definition" name="definition" class="form-control" type="text"><br>
 
   </div>
 
