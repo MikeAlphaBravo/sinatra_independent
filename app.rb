@@ -17,21 +17,18 @@ end
 
 post('/') do
   Dictionary.add_or_update(params["word"], params["definition"])
-  @word = Dictionary.all
-  erb(:input)
+  redirect '/'
 end
 
-get('/words/:word?') do
-  binding.pry
+get('/words/:word') do
   @word = Dictionary.find(params[:word])
   # binding.pry
   erb(:output)
 end
 
 post('/words/:word') do
-  @word = Dictionary.find(params[:word])
-  @word.add_or_update({:definition=>params["definition"]})
-  erb(:output)
+  Dictionary.add_or_update(params[:word], params[:definition])
+  redirect "/words/#{params[:word]}"
 end
 
 post('/words/:word') do
@@ -39,5 +36,4 @@ post('/words/:word') do
   Dictionary.delete(@word.word)
   @list = Dictionary.sort
   redirect '/'
-  erb(:output)
 end

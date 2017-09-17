@@ -1,11 +1,10 @@
 <h1>Word: <%= params[:word] %></h1>
-<h1>Word: <%= params[:other] %></h1>
 
 <% @word.each do |definition| %>
   <h2>Definition: <%= definition %></h2>
 <% end %>
 
-<form action="/words/" method="post">
+<form action="/words/<%= params[:word] %>" method="post">
   <div class="form-group"><br>
 
     <label for="definition">Enter another definition of the word!</label>
@@ -13,8 +12,8 @@
 
   </div>
 
-  <!-- <button type="reset" class="btn btn-secondary">Submit!</button><br><br> -->
+  <button type="submit" class="btn btn-secondary">Submit!</button><br><br>
 
-<button type="submit" class="btn btn-warning">Delete Word</button>
+<!-- <button type="submit" class="btn btn-warning">Delete Word</button> -->
 </form><br>
 <button><a href='/'>Back to Word List</a></button>
