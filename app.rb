@@ -6,12 +6,12 @@ require('pry')
 
 get('/') do
   if Dictionary.all.empty?
-    Dictionary.add_or_update("word1","definition1")
-    Dictionary.add_or_update("word2","definition1")
-    Dictionary.add_or_update("word2","definition2")
+    Dictionary.add_or_update("apple","The round fruit of a tree of the rose family, which typically has thin red or green skin and crisp flesh.  Many varieties have been developed as dessert or cooking fruit or for making cider.")
+    Dictionary.add_or_update("banana","A long curved fruit that grows in clusters and has soft pulpy flesh and yellow skin when ripe.")
+    Dictionary.add_or_update("zebra","An African wild horse with black and white stripes and an erect mane.")
   end
 
-  @list = Dictionary.all()
+  @list = Dictionary.all().sort
   erb(:input)
 end
 
@@ -22,7 +22,6 @@ end
 
 get('/words/:word') do
   @word = Dictionary.find(params[:word])
-  # binding.pry
   erb(:output)
 end
 
@@ -31,9 +30,8 @@ post('/words/:word') do
   redirect "/words/#{params[:word]}"
 end
 
-post('/words/:word') do
-  @word = Dictionary.find(params[:word])
-  Dictionary.delete(@word.word)
-  @list = Dictionary.sort
-  redirect '/'
-end
+# post('/words/:word') do
+#   @word = Dictionary.find(params[:word])
+#   Dictionary.delete(word)
+#   redirect '/'
+# end

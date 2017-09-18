@@ -7,9 +7,6 @@ class Dictionary
     @definition = definition
   end
 
-# in find and save
-# a method
-
   def self.add_or_update(word, definition)
     if @@list.key?(word)
       @@list[word].push(definition)
@@ -18,6 +15,9 @@ class Dictionary
     end
   end
 
+  def self.clear()
+    @@list = []
+  end
 
   def self.all()
     @@list
@@ -27,12 +27,11 @@ class Dictionary
     @@list[word]
   end
 
-  def self.delete(word)
-    @@list.delete(word)
+  def self.sort(word)
+    @@list.sort_by! {|x| x.word}
   end
 
-  # def self.sort()
-  #   @@list.sort_by! {|x| x.input_word}
+  # def self.delete(word)
+  #   @@list[:word] == []
   # end
-
 end
