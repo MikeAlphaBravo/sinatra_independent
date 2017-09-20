@@ -29,9 +29,3 @@ post('/words/:word') do
   Dictionary.add_or_update(params[:word], params[:definition])
   redirect "/words/#{params[:word]}"
 end
-
-# post('/words/:word') do
-#   @word = Dictionary.find(params[:word])
-#   Dictionary.delete(word)
-#   redirect '/'
-# end

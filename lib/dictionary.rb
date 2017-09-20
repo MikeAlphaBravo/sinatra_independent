@@ -16,7 +16,7 @@ class Dictionary
   end
 
   def self.clear()
-    @@list = []
+    @@list = {}
   end
 
   def self.all()
@@ -26,12 +26,4 @@ class Dictionary
   def self.find(word)
     @@list[word]
   end
-
-  def self.sort(word)
-    @@list.sort_by! {|x| x.word}
-  end
-
-  # def self.delete(word)
-  #   @@list[:word] == []
-  # end
 end
